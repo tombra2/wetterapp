@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './aiapi.css';
 import {GoogleGenAI} from "@google/genai";
+import TokenMarkdown from "./TokenMarkdown.jsx";
 
 
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY
@@ -43,12 +44,12 @@ const Aiapi = ({weatherData, city}) => {
                     {loading ? 'Loading...' : `Was kann ich in ${city} machen ?`}
                 </button>
             </div>
-            <div className="card-body d-flex justify-content-center">
+            <div className="card-body d-flex justify-content-center flex-column">
                 {loading && (<div className="spinner-loading " role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>)}
                 {error && (<div className="alert alert-danger">{error.message}</div>)}
-                {response}
+                <TokenMarkdown content={response}/>
             </div>
         </div>
     )
