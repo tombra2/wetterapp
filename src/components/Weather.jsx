@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import {useState, useEffect} from 'react'
 
-const Weather = ({ city }) => {
+const Weather = ({city, onWeatherData}) => {
     const [data, setData] = useState(null)
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
@@ -25,6 +25,7 @@ const Weather = ({ city }) => {
 
                 const weatherData = await response.json()
                 setData(weatherData)
+                onWeatherData(weatherData)
             } catch (err) {
                 console.error('Weather fetch failed:', err)
                 setError(err.message || 'Unable to load weather data. Please try again.')
@@ -69,7 +70,7 @@ const Weather = ({ city }) => {
                 <h2 className="card-title text-center mb-4">
                     {data.name}, {data.sys.country}
                 </h2>
-                
+
                 <div className="row">
                     <div className="col-md-6">
                         <div className="text-center mb-3">
@@ -81,7 +82,7 @@ const Weather = ({ city }) => {
                             <p className="text-capitalize fs-5">{data.weather[0].description}</p>
                         </div>
                     </div>
-                    
+
                     <div className="col-md-6">
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item d-flex justify-content-between">
