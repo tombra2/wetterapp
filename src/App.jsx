@@ -22,7 +22,9 @@ function App() {
                 <Searchbar onSearch={handleSearch}/>
                 <div className="row justify-content-center">
                     <div className="col-md-8">
+                        <div className="mb-4">
                         <Weather city={city} onWeatherData={handleWeather}/>
+                            </div>
                         <Aiapi weatherData={weatherData} city={city}/>
                     </div>
                 </div>
