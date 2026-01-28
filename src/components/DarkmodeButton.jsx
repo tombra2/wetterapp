@@ -2,9 +2,7 @@ import './darkmodebutton.css';
 
 
 const DarkmodeButton = () => {
-    return (
-        <button className="btn btn-dark">Darkmode</button>
-    )
+    return (<div>Thomas Brandner 5AAIF</div>)
 }
 
 export default DarkmodeButton;
