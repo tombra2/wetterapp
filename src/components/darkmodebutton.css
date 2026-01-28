@@ -7,3 +7,12 @@ body {
     color: light-dark(var(--bs-dark), var(--bs-light));
 }
 
+.card {
+    background-color: light-dark(var(--bs-light), var(--bs-dark)) !important;
+    color: light-dark(var(--bs-dark), var(--bs-light)) !important;
+}
+
+.list-group-item {
+    background-color: light-dark(var(--bs-light), var(--bs-dark)) !important;
+    color: light-dark(var(--bs-dark), var(--bs-light)) !important;
+}
