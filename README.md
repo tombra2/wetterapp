@@ -1,4 +1,4 @@
-# Wetterstation
+# Wetterstation V2.0
 
 A modern weather application with AI-powered weather insights and analysis.
 
